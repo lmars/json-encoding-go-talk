@@ -19,7 +19,7 @@ type RightCuboid struct {
 
 func main() {
 	r := RightCuboid{
-		Rect{2, 3}, Rect{4, 5}, Rect{6, 7},
+		Rect{10, 5}, Rect{5, 7}, Rect{7, 10},
 	}
 	data, err := json.Marshal(r)
 	if err != nil {

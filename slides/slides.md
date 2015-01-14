@@ -228,11 +228,11 @@ type RightCuboid struct {
 }
 
 r := RightCuboid{
-  Rect{2, 3}, Rect{4, 5}, Rect{6, 7},
+  Rect{10, 5}, Rect{5, 7}, Rect{7, 10},
 }
 data, err := json.Marshal(r)
-=> {"a":{"x":2,"y":3},
-"b":{"x":4,"y":5},"c":{"x":6,"y":7}}
+=> {"a":{"x":10,"y":5},
+"b":{"x":5,"y":7},"c":{"x":7,"y":10}}
 </p>
 
 <!SLIDE methods>

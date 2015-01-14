@@ -6,15 +6,15 @@
 
 # JSON Data Types
 
-|        |                              |
-| ------ | ---------------------------- |
-| String | `"hello"`                    |
-| Number | `42`                         |
-| True   | `true`                       |
-| False  | `false`                      |
-| Null   | `null`                       |
-| Object | `{ "foo": 42, "bar": true }` |
-| Array  | `[ 42, "hello", false ]`     |
+|        |                                            |
+| ------ | ------------------------------------------ |
+| String | `"hello"`                                  |
+| Number | `42`                                       |
+| True   | `true`                                     |
+| False  | `false`                                    |
+| Null   | `null`                                     |
+| Object | `{ "foo": 42, "bar": true }`               |
+| Array  | `[ 42, "hello", false, { "foo": "bar" } ]` |
 
 <!SLIDE>
 

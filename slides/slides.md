@@ -234,3 +234,37 @@ data, err := json.Marshal(r)
 => {"a":{"x":2,"y":3},
 "b":{"x":4,"y":5},"c":{"x":6,"y":7}}
 </p>
+
+<!SLIDE methods>
+
+# JSON Encoder
+
+An Encoder writes JSON objects to an output stream.
+
+---
+
+<p class="code">
+func NewEncoder(w io.Writer)
+               *Encoder
+
+func (e *Encoder) Encode
+                  (v interface{})
+                  error
+</p>
+
+<!SLIDE methods>
+
+# JSON Decoder
+
+A Decoder reads and decodes JSON objects from an input stream.
+
+---
+
+<p class="code">
+func NewDecoder(r io.Reader)
+               *Decoder
+
+func (dec *Decoder) Decode
+                    (v interface{})
+                    error
+</p>

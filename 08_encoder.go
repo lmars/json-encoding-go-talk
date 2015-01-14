@@ -22,20 +22,18 @@ func main() {
 	dec := json.NewDecoder(rd)
 	go func() {
 		// slowly write a JSON array of ints to wr
-		fmt.Fprint(wr, `[`)
 		for i := 0; i < 10; i++ {
-			fmt.Fprintf(wr, "%d", i)
-			if i != 9 {
-				fmt.Fprint(wr, ", ")
-			}
-			time.Sleep(100 * time.Millisecond)
+			fmt.Fprintf(wr, "[%d]", i)
+			time.Sleep(1000 * time.Millisecond)
 		}
-		fmt.Fprint(wr, `]`)
+		wr.Close()
 	}()
 
-	var arr []int
-	if err := dec.Decode(&arr); err != nil {
-		log.Fatal(err)
+	for {
+		var arr []int
+		if err := dec.Decode(&arr); err != nil {
+			break
+		}
+		fmt.Printf("%+v\n", arr)
 	}
-	fmt.Printf("%+v\n", arr)
 }

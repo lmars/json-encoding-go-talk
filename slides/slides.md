@@ -268,3 +268,15 @@ func (dec *Decoder) Decode
                     (v interface{})
                     error
 </p>
+
+<!SLIDE methods>
+
+# Delayed Decoding
+
+`type RawMessage []byte`
+
+RawMessage is a raw encoded JSON object. It implements Marshaler and Unmarshaler and can be used to delay JSON decoding or precompute a JSON encoding.
+
+<!SLIDE methods>
+
+# FIN

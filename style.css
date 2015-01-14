@@ -1,0 +1,14 @@
+.slide {
+  background-color: #0d46bc;
+  color: #ffffff;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.methods p {
+  font-size: 45px;
+}
+
+p.code {
+  text-align: left;
+  white-space: pre;
+}

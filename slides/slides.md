@@ -32,7 +32,7 @@
 
 <!SLIDE methods>
 
-# Marshal
+# json.Marshal Method
 
 ---
 
@@ -50,7 +50,7 @@ Marshal returns the JSON encoding of v.
 
 <!SLIDE methods>
 
-# Unmarshal
+# json.Unmarshal Method
 
 ---
 

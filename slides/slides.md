@@ -170,3 +170,48 @@ func (r *Rect) MarshalJSON()
 func (r *Rect) UnmarshalJSON([]byte)
                 error
 </p>
+
+<!SLIDE methods>
+
+# Tags
+
+Struct fields can have tags containing arbitrary data.
+
+By convention, tags are a concatenation of optionally space-separated key:"value" pairs
+
+Tags can be read at runtime with the `reflect` package.
+
+<!SLIDE methods>
+
+# Tags
+
+<p class="code">
+type Rect struct {
+  X int `side:"X"`
+  Y int `side:"Y"`
+}
+
+typ := reflect.TypeOf(Rect{})
+field := typ.Field(0)
+field.Tag.Get("side")
+=> "X"
+</p>
+
+<!SLIDE methods>
+
+# JSON Tags
+
+<p class="code">
+type Rect struct {
+  X int `json:"x"`
+  Y int `json:"y"`
+}
+
+rect := Rect{10, 20}
+data, err := json.Marshal(rect)
+=> {"x":10,"y":20}
+
+data = []byte(`{"x": 5, "y": 8}`)
+err := json.Unmarshal(data, &rect)
+=> Rect{X: 5, Y: 8}
+</p>

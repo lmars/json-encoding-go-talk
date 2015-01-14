@@ -71,3 +71,85 @@ Unmarshal parses the JSON-encoded data and stores the result in the value pointe
 # Examples
 
 <!SLIDE methods>
+
+# Encode Time
+
+<p class="code">
+t := time.Now()
+
+str := t.Format(time.RFC3339)
+
+data, err := json.Marshal(str)
+
+=> "2015-01-13T16:02:27Z"
+</p>
+
+<!SLIDE methods>
+
+# Decode Time
+
+<p class="code">
+b := []byte("2015-01-13T17:02:27Z")
+
+var str string
+
+err := json.Unmarshal(b, &str)
+
+t := time.Parse(time.RFC3339, str)
+
+=> "2015-01-13T17:02:27Z"
+</p>
+
+<!SLIDE methods>
+
+# JSON Interfaces
+
+---
+
+<p class="code">
+type Marshaler interface {
+  MarshalJSON() ([]byte, error)
+}
+</p>
+
+---
+
+Marshaler is the interface implemented by objects that can marshal themselves into valid JSON.
+
+<!SLIDE methods>
+
+# JSON Interfaces
+
+---
+
+<p class="code">
+type Unmarshaler interface {
+  UnmarshalJSON([]byte) error
+}
+</p>
+
+---
+
+Unmarshaler is the interface implemented by objects that can unmarshal a JSON description of themselves.
+
+<!SLIDE methods>
+
+# Time
+
+<p class="code" style="margin-top:0">
+t := time.Now()
+
+data, err := json.Marshal(t)
+
+=> "2015-01-13T16:02:27Z"
+</p>
+
+---
+
+<p class="code" style="margin-top:0">
+b := []byte("2015-01-13T17:02:27Z")
+
+err := json.Unmarshal(b, &t)
+
+=> "2015-01-13T17:02:27Z"
+</p>

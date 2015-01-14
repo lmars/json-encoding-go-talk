@@ -153,3 +153,20 @@ err := json.Unmarshal(b, &t)
 
 => "2015-01-13T17:02:27Z"
 </p>
+
+<!SLIDE methods>
+
+# Custom Type
+
+<p class="code">
+type Rect struct {
+  X int
+  Y int
+}
+
+func (r *Rect) MarshalJSON()
+                ([]byte, error)
+
+func (r *Rect) UnmarshalJSON([]byte)
+                error
+</p>

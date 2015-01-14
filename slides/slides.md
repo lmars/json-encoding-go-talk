@@ -215,3 +215,22 @@ data = []byte(`{"x": 5, "y": 8}`)
 err := json.Unmarshal(data, &rect)
 => Rect{X: 5, Y: 8}
 </p>
+
+<!SLIDE methods>
+
+# JSON Tags
+
+<p class="code" style="margin-top:0">
+type RightCuboid struct {
+  A Rect `json:"a"`
+  B Rect `json:"b"`
+  C Rect `json:"c"`
+}
+
+r := RightCuboid{
+  Rect{2, 3}, Rect{4, 5}, Rect{6, 7},
+}
+data, err := json.Marshal(r)
+=> {"a":{"x":2,"y":3},
+"b":{"x":4,"y":5},"c":{"x":6,"y":7}}
+</p>
